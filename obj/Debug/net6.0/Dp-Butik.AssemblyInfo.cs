@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Dp-Butik")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b8d4ecfd9ad6da7f579b789a0330c07cd92a4e18")]
 [assembly: System.Reflection.AssemblyProductAttribute("Dp-Butik")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Dp-Butik")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
