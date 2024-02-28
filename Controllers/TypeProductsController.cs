@@ -21,9 +21,9 @@ namespace Dp_Butik.Controllers
         // GET: TypeProducts
         public async Task<IActionResult> Index()
         {
-              return _context.TypeProducts != null ? 
-                          View(await _context.TypeProducts.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.TypeProducts'  is null.");
+            return _context.TypeProducts != null ?
+                        View(await _context.TypeProducts.ToListAsync()) :
+                        Problem("Entity set 'ApplicationDbContext.TypeProducts'  is null.");
         }
 
         // GET: TypeProducts/Details/5
@@ -57,13 +57,16 @@ namespace Dp_Butik.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Name,DataUpdate")] TypeProduct typeProduct)
         {
-            if (ModelState.IsValid)
+            typeProduct.DataUpdate = DateTime.Now;
+            if (!ModelState.IsValid)
             {
-                _context.TypeProducts.Add(typeProduct);
+                return View(typeProduct);
+               
+            }
+             _context.TypeProducts.Add(typeProduct);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
-            return View(typeProduct);
+
         }
 
         // GET: TypeProducts/Edit/5
@@ -149,14 +152,14 @@ namespace Dp_Butik.Controllers
             {
                 _context.TypeProducts.Remove(typeProduct);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool TypeProductExists(int id)
         {
-          return (_context.TypeProducts?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.TypeProducts?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
