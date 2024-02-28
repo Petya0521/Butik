@@ -4,6 +4,7 @@ namespace Dp_Butik.Data
 {
     public class Product
     {
+        //dhjhgfdhgd
         public int Id { get; set; }
         public int CatalogNum { get; set; }
         public string Name { get; set; }
